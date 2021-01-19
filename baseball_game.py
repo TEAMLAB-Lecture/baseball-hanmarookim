@@ -272,12 +272,12 @@ def main():
                     elif is_no(one_more):
                         break
                     else:
-                        print('Wrong Input, Input again')
+                        print('WRONG INPUT')
                         continue
             if endOfGame:
                 break
         else:
-            print('Wrong Input, Input again')
+            print('WRONG INPUT')
     if again : main()
     else:
         print("Thank you for using this program")

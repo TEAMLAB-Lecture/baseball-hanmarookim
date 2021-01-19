@@ -248,12 +248,11 @@ def is_no(one_more_input):
 
 
 def main():
-    user_input = 999
-    again = False
-    endOfGame = False
+    gameFlag = True
+    print("Play Baseball")
     random_number = str(get_not_duplicated_three_digit_number())
     print("Random Number is : ", random_number)
-    while True:
+    while gameFlag:
         user_input = input("Input guess number : ")
         if user_input == '0' :
             break
@@ -261,26 +260,22 @@ def main():
             strikes, balls = get_strikes_or_ball(user_input, random_number)
             print(f'Strikes : {strikes} , Balls : {balls}')
             if strikes == 3:
-                endOfGame = True
                 while True:
                     one_more = input('You win, one more(Y/N) ?')
                     if is_yes(one_more):
-                        again = True
+                        random_number = str(get_not_duplicated_three_digit_number())
+                        print("Random Number is : ", random_number)
                         break
-                    elif is_no(one_more):
+                    elif is_no(one_more) or one_more == '0':
+                        gameFlag = False
                         break
                     else:
-                        print('WRONG INPUT')
+                        print('Wrong Input, Input again')
                         continue
-            if endOfGame:
-                break
         else:
-            print('WRONG INPUT')
-    if again : main()
-    else:
-        print("Thank you for using this program")
-        print("End of the Game")
+            print('Wrong Input, Input again')
+    print("Thank you for using this program")
+    print("End of the Game")
 
 if __name__ == "__main__":
-    print("Play Baseball")
     main()

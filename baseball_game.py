@@ -264,7 +264,6 @@ def main():
                 endOfGame = True
                 while True:
                     one_more = input('You win, one more(Y/N) ?')
-                    if one_more == '0': break
                     if is_yes(one_more):
                         again = True
                         break

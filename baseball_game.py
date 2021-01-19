@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import random
-
+import collections
 
 def get_random_number():
     # Helper Function - 지우지 말 것
@@ -248,7 +248,6 @@ def is_no(one_more_input):
 
 
 def main():
-    print("Play Baseball")
     user_input = 999
     again = False
     endOfGame = False
@@ -272,16 +271,17 @@ def main():
                     elif is_no(one_more):
                         break
                     else:
-                        print('WRONG INPUT')
+                        print('Wrong Input, Input again')
                         continue
             if endOfGame:
                 break
         else:
-            print('WRONG INPUT')
+            print('Wrong Input, Input again')
     if again : main()
     else:
         print("Thank you for using this program")
         print("End of the Game")
 
 if __name__ == "__main__":
+    print("Play Baseball")
     main()

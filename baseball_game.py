@@ -84,11 +84,12 @@ def is_duplicated_number(three_digit):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-    result = 0
-    for i in three_digit:
-        result += three_digit.count(i)
+    for n in three_digit:
+        if three_digit.count(n) > 1:
+            return True
+    return False
     # ==================================
-    return result != 3
+
 
 def is_validated_number(user_input_number):
     # '''
